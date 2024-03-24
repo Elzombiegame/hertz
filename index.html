@@ -1,1 +1,117 @@
-<a href="juego.html">jugar</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz cumple hertz/Cat simulator</title>
+
+    <style>
+        @font-face {
+    font-family: jjk;
+    src: url(https://elzombiegame.github.io/hertz/font/JujutsuKaisen.ttf);
+}
+        *{
+            box-sizing: border-box;
+            transition: 3s;
+            font-family: jjk;
+
+        }
+        body{
+            background-color:black ;
+            text-align: center;
+            max-width: 100vw;
+            display: flex;
+            margin: 0px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 45vh;
+        }
+        .carga{
+            max-width: 100vw;
+
+            display: flex;
+            border: 5px solid white;
+        }
+        .carga div{
+            margin: 5px;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        @keyframes vanish {
+            0%{filter: opacity(100%);}
+            100%{filter: opacity(0%);}
+
+        }
+        @keyframes vanish2 {
+            0%{filter: opacity(0%);}
+
+            100%{filter: opacity(100%);}
+
+        }
+        button{
+            font-size: 50px;
+            padding: 20px;
+            padding-top: 0px;
+            background-color: black;
+            border: 5px solid white;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="carga" id="carga">
+        <div id="cara1"></div>
+        <div id="cara2"></div>
+        <div id="cara3"></div>
+        <div id="cara4"></div>
+        <div id="cara5"></div>
+        <div id="cara6"></div>
+        <div id="cara7"></div>
+        <div id="cara8"></div>
+        <div id="cara9"></div>
+        <div id="cara10"></div>
+    </div>
+    <a href="juego.html" style="display: none;" id="juego"><button>jugar</button></a>
+
+    <script>
+
+        let i=1;
+        
+        let invervalo = setInterval((hola) => {
+            document.getElementById("cara"+i).style ='background-color: white;'
+            i++;
+            if (i === 11) {
+                siguiente();
+            clearInterval(invervalo);
+            
+        }
+            
+        },500)
+       
+        function siguiente() {
+            document.getElementById("carga").style = "animation: vanish 3s linear ;" ;
+            setTimeout(() => {
+                document.getElementById("carga").style = "display: none;";
+
+
+            }, 2900);      
+            setTimeout(() => {
+                document.getElementById("juego").style = "display: block;";
+
+            document.getElementById("juego").style = "animation: vanish2 3s linear ;";
+
+            }, 3000);          
+        }
+        
+        
+
+    </script>
+
+</div>
+</body>
+</html>

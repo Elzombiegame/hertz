@@ -31,7 +31,7 @@ function corte(){
 function contadorVida() {
     if(i <=1){
         vida.style = "    width: "+0+"%;";   
-        fondo.style = "background-image: url(img/fondo.jpg);background-repeat: no-repeat; background-size: cover;"  ;
+        fondo.style = "background-image: url(img/fondo.jpg);background-repeat: no-repeat; background-size: 100vw cover ;"  ;
         musica.pause();
         audio.play();
         setTimeout(() => {
